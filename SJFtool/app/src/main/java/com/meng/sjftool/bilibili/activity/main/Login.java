@@ -100,7 +100,7 @@ public class Login extends Activity {
 
 										@Override
 										public void run() {
-											MainActivity.instance.mainAccountAdapter.notifyDataSetChanged();
+											AccountManager.getInstance().notifyDataSetChanged();
 											finish();
 										}
 									});

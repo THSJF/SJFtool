@@ -1,24 +1,36 @@
 package com.meng.sjftool.bilibili.lib;
 
 import android.content.*;
+import android.graphics.*;
 import android.os.*;
+import android.view.*;
+import android.widget.*;
 import com.google.gson.reflect.*;
+import com.meng.sjftool.*;
+import com.meng.sjftool.bilibili.adapters.*;
 import com.meng.sjftool.bilibili.javabean.*;
+import com.meng.sjftool.bilibili.lib.*;
 import com.meng.sjftool.libs.*;
 import java.io.*;
 import java.util.*;
 
-public class AccountManager {
+public class AccountManager extends BaseAdapter {
 
 	private static AccountManager instance;
 
 	private ArrayList<AccountInfo> loginAccounts;
 	private String jsonPath;
+	
+	private Context context;
 
+	public static AccountManager getInstance() {
+		return instance;
+	}
 	public static void init(Context c) {
 		if (instance == null) {
 			instance = new AccountManager();
 		}
+		instance.context = c;
 		instance.jsonPath = c.getFilesDir() + "/account.json";
 		File f = new File(instance.jsonPath);
 		if (!f.exists()) {
@@ -163,4 +175,54 @@ public class AccountManager {
             e.printStackTrace();
 		}
 	}
+	
+	public int getCount() {
+        return instance.loginAccounts.size();
+    }
+
+    public Object getItem(int position) {
+        return instance.loginAccounts.get(position);
+    }
+
+    public long getItemId(int position) {
+        return instance.loginAccounts.get(position).hashCode();
+    }
+
+    public View getView(final int position, View convertView, ViewGroup parent) {
+		final ViewHolder holder;
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.account_adapter, null);
+            holder = new ViewHolder();
+            holder.tvName = (TextView) convertView.findViewById(R.id.account_adapterTextView_name);
+			holder.ivHead = (ImageView) convertView.findViewById(R.id.account_adapterImageView_head);
+			convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+        final AccountInfo accountInfo = AccountManager.get(position);
+		holder.tvName.setText(accountInfo.name);
+		holder.tvName.setTextColor(accountInfo.isCookieExceed() ?Color.RED: MainActivity.instance.colorManager.getColorText());
+		File bilibiliImageFile = new File(MainActivity.instance.mainDic + "bilibili/" + accountInfo.uid + ".jpg");
+        if (bilibiliImageFile.exists()) {
+            holder.ivHead.setImageBitmap(BitmapFactory.decodeFile(bilibiliImageFile.getAbsolutePath()));
+        } else {
+            if (MainActivity.onWifi) {
+                MainActivity.instance.threadPool.execute(new DownloadImageRunnable(holder.ivHead, accountInfo.uid, DownloadImageRunnable.BilibiliUser));
+            } else {
+                holder.ivHead.setImageResource(R.drawable.stat_sys_download_anim0);
+                holder.ivHead.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							MainActivity.instance.threadPool.execute(new DownloadImageRunnable(holder.ivHead, accountInfo.uid, DownloadImageRunnable.BilibiliUser));
+						}
+					});
+            }
+        }
+        return convertView;
+    }
+
+    private class ViewHolder {
+        private ImageView ivHead;
+        private TextView tvName;
+    }
 }

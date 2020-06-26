@@ -40,7 +40,7 @@ public class ManagerFragment extends Fragment {
 		menuGroup.setClosedOnTouchOutside(true);
 
         ListView list = (ListView) view.findViewById(R.id.account_managerListView);
-        list.setAdapter(MainActivity.instance.mainAccountAdapter);
+        list.setAdapter(AccountManager.getInstance());
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 				@Override
 				public void onItemClick(final AdapterView<?> parent, View view, final int position, long id) {
@@ -130,13 +130,13 @@ public class ManagerFragment extends Fragment {
 												@Override
 												public void onClick(DialogInterface p1, int p2) {
 													AccountManager.remove(position);
-													MainActivity.instance.mainAccountAdapter.notifyDataSetChanged();
+													AccountManager.getInstance().notifyDataSetChanged();
 													BaseIdFragment.createSpinnerList();
 												}
 											}).setNegativeButton("取消", null).show();
 										break;
 								}
-								MainActivity.instance.mainAccountAdapter.notifyDataSetChanged();
+								AccountManager.getInstance().notifyDataSetChanged();
 								BaseIdFragment.createSpinnerList();
 								selectOpDialog.cancel();
 							}
@@ -188,7 +188,7 @@ public class ManagerFragment extends Fragment {
 
 							@Override
 							public void run() {
-								MainActivity.instance.mainAccountAdapter.notifyDataSetChanged();
+								AccountManager.getInstance().notifyDataSetChanged();
 								BaseIdFragment.createSpinnerList();
 							}
 						});

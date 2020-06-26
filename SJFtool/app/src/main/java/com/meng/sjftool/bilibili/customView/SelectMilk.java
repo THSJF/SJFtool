@@ -27,7 +27,7 @@ public class SelectMilk extends LinearLayout {
 		editSerialView = (LinearLayout) LayoutInflater.from(c).inflate(R.layout.add_serial, null);
 		et = (EditText) editSerialView.findViewById(R.id.add_serialEditText);
 		sp = (Spinner) editSerialView.findViewById(R.id.add_serialSpinner);
-		sp.setAdapter(MainActivity.instance.mainAccountAdapter);
+		sp.setAdapter(AccountManager.getInstance());
 		editSerialDialog = new AlertDialog.Builder(c).setView(editSerialView).setTitle("编辑").setPositiveButton("确定", new DialogInterface.OnClickListener() {
 				@Override
 				public void onClick(DialogInterface p11, int p2) {

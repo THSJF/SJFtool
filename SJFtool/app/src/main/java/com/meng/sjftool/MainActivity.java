@@ -46,8 +46,6 @@ public class MainActivity extends Activity {
     public TextView tvMemory;
     public final String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0";
 
-    public AccountAdapter mainAccountAdapter;
-
     public String mainDic = Environment.getExternalStorageDirectory() + "/Pictures/grzx/";
 
     public static boolean onWifi = false;
@@ -65,7 +63,6 @@ public class MainActivity extends Activity {
 	public static final String regCv = "[Cc][Vv](\\d{1,})";
 	public static final String regUid = "space\\D{0,}(\\d{1,})";
 	public static final String regUid2 = "UID\\D{0,}(\\d{1,})";
-
 
 	private int themeId;
     @Override
@@ -94,8 +91,7 @@ public class MainActivity extends Activity {
 		rightDrawer.setBackgroundColor(colorManager.getColorBackground());
         setListener();
 		AccountManager.init(this);
-        mainAccountAdapter = new AccountAdapter(this);
-		for (String s:new String[]{"group/","user/","bilibili/","cache/"}) {
+        for (String s:new String[]{"group/","user/","bilibili/","cache/"}) {
 			File ff = new File(mainDic + s);
 			if (!ff.exists()) {
 				ff.mkdirs();

@@ -127,7 +127,7 @@ public class JudgeListAdapter extends BaseExpandableListAdapter {
 					View editSerialView = MainActivity.instance.getLayoutInflater().inflate(R.layout.add_serial, null);
 					final EditText et = (EditText) editSerialView.findViewById(R.id.add_serialEditText);
 					final Spinner sp = (Spinner) editSerialView.findViewById(R.id.add_serialSpinner);
-					sp.setAdapter(MainActivity.instance.mainAccountAdapter);
+					sp.setAdapter(AccountManager.getInstance());
 					new AlertDialog.Builder(MainActivity.instance).setView(editSerialView).setTitle("选择").setPositiveButton("发送",
 						new DialogInterface.OnClickListener() {
 							@Override
@@ -261,7 +261,7 @@ public class JudgeListAdapter extends BaseExpandableListAdapter {
 					View editSerialView = MainActivity.instance.getLayoutInflater().inflate(R.layout.add_serial, null);
 					final EditText et = (EditText) editSerialView.findViewById(R.id.add_serialEditText);
 					final Spinner sp = (Spinner) editSerialView.findViewById(R.id.add_serialSpinner);
-					sp.setAdapter(MainActivity.instance.mainAccountAdapter);
+					sp.setAdapter(AccountManager.getInstance());
 					new AlertDialog.Builder(MainActivity.instance).setView(editSerialView).setTitle("选择").setPositiveButton("发送",
 						new DialogInterface.OnClickListener() {
 							@Override
