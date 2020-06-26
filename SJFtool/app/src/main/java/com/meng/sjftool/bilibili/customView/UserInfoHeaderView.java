@@ -234,7 +234,18 @@ public class UserInfoHeaderView extends LinearLayout implements View.OnClickList
 								tvBMain.setText("主站 Lv." + info.data.level);
 							}
 						});
-
+					if (sjb.data.roomid <= 0) {
+						MainActivity.instance.runOnUiThread(new Runnable() {
+								@Override
+								public void run() {
+									tvBLive.setText("未开通直播间");
+									btnStart.setEnabled(false);
+									btnCopy.setEnabled(false);
+									newName.setVisibility(View.GONE);
+								}
+							});
+						return;
+					}
 					final RoomToUid rtu=Tools.BilibiliTool.getRoomToUid(sjb.data.roomid);
 					MainActivity.instance.runOnUiThread(new Runnable() {
 							@Override
@@ -250,7 +261,7 @@ public class UserInfoHeaderView extends LinearLayout implements View.OnClickList
 									btnStart.setEnabled(false);
 									btnCopy.setEnabled(false);
 									newName.setVisibility(View.GONE);
-								}
+								}	
 							}
 						});
 				}

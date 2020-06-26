@@ -7,12 +7,13 @@ import com.meng.sjftool.libs.*;
 public class DrawerAdapter extends BaseExpandableListAdapter {
 
 	private String[] title = {
-		"bilibili","barcode"
+		"bilibili","barcode","app"
 	};
 
 	private String[][] items = {
-		{ "输入ID", "动态","头衔","管理账号","AVBV转换", "设置", "退出"},
-		{ "qr" }
+		{ "输入ID", "动态","头衔","管理账号","AVBV转换" },
+		{ "qr" },
+		{ "设置", "退出" }
 	};
 
 	public DrawerAdapter() {
@@ -33,8 +34,7 @@ public class DrawerAdapter extends BaseExpandableListAdapter {
 
 	//设置子item的组件
 	@Override
-	public View getChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-		String itemStr = items[groupPosition][childPosition];
+	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		if (convertView == null) {
 			convertView = MainActivity.instance.getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
@@ -45,7 +45,7 @@ public class DrawerAdapter extends BaseExpandableListAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();	
 		}
-		holder.tvName.setText(itemStr);
+		holder.tvName.setText(items[groupPosition][childPosition]);
 		return convertView;
 	}
 
@@ -72,8 +72,7 @@ public class DrawerAdapter extends BaseExpandableListAdapter {
 	}
 	//设置父item组件
 	@Override
-	public View getGroupView(final int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-		String titleStr = title[groupPosition];
+	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 		ViewHolder holder;
 		if (convertView == null) {
 			convertView = MainActivity.instance.getLayoutInflater().inflate(android.R.layout.simple_list_item_1, null);
@@ -84,7 +83,7 @@ public class DrawerAdapter extends BaseExpandableListAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();	
 		}  
-		holder.tvName.setText(titleStr);
+		holder.tvName.setText(title[groupPosition]);
 		return convertView;
 	}
 

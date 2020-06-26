@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
     public final String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:28.0) Gecko/20100101 Firefox/28.0";
 
     public AccountAdapter mainAccountAdapter;
-	
+
     public String mainDic = Environment.getExternalStorageDirectory() + "/Pictures/grzx/";
 
     public static boolean onWifi = false;
@@ -158,6 +158,7 @@ public class MainActivity extends Activity {
         mDrawerToggle.syncState();
         final DrawerAdapter drawerAdapter = new DrawerAdapter();
 		mDrawerList.setAdapter(drawerAdapter);
+		mDrawerList.expandGroup(drawerAdapter.getGroupCount() - 1);
 		mDrawerList.setOnChildClickListener(new OnChildClickListener(){
 
 				@Override
