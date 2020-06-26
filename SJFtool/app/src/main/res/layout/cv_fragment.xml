@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:fab="http://schemas.android.com/apk/res-auto"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<ImageView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/cv_fragmentImageView"/>
+
+		<TextView
+			android:textAppearance="@android:style/TextAppearance.Material.Body1"
+			android:id="@+id/cv_fragmentTextView_info"
+			android:focusable="true"
+			android:longClickable="true"
+			android:textIsSelectable="true"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/cv_fragmentLinearLayout_input"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingRight="84dp"
+		android:layout_gravity="bottom|center">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/cv_fragmentEditText_msg"
+				android:layout_width="0dp"
+				android:layout_weight="6"
+				android:layout_height="wrap_content"/>
+
+			<ImageButton
+				android:id="@+id/cv_fragmentButton_send"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_plane"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<Spinner
+				android:id="@+id/cv_fragmentSpinner"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.7"/>
+
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:id="@+id/cv_fragmentButton_preset"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="预设内容"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<com.github.clans.fab.FloatingActionMenu
+		android:id="@+id/cv_float_menu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="10dp"
+		android:layout_marginBottom="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="10dp"
+		fab:menu_labels_style="@style/MenuLabelsStyle"
+		fab:menu_labels_showAnimation="@anim/jump_from_down"
+		fab:menu_labels_hideAnimation="@anim/jump_to_down"
+		fab:menu_animationDelayPerItem="0"
+		fab:menu_shadowColor="#444"
+		fab:menu_colorNormal="@color/app_primary"
+		fab:menu_colorPressed="@color/app_primary_dark"
+		fab:menu_colorRipple="#7FCA00"
+		android:layout_gravity="bottom|right">
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/cv_fragmentButton_zan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="点赞"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/cv_fragmentButton_coin1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="投币1个"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/cv_fragmentButton_coin2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="投币2个"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/cv_fragmentButton_favorite"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="收藏"
+			style="@style/MenuButtonsSmall"/>
+
+	</com.github.clans.fab.FloatingActionMenu>
+
+</FrameLayout>
+

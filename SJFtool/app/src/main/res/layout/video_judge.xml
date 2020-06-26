@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/send_dynamicRelativeLayout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<ImageView
+		android:id="@+id/video_judgeImageView_header"
+		android:layout_height="40dp"
+		android:layout_width="40dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="5dp"
+		android:src="@drawable/ic_launcher"/>
+
+	<TextView
+		android:id="@+id/video_judgeTextView_uname"
+		android:layout_alignTop="@id/video_judgeImageView_header"
+		android:layout_toRightOf="@id/video_judgeImageView_header"
+		android:layout_marginLeft="10dp"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:text="此生无悔入东方"/>
+
+	<TextView
+		android:id="@+id/video_judgeTextView_time"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="99-6-1"
+		android:layout_below="@id/video_judgeTextView_uname"
+		android:layout_alignLeft="@id/video_judgeTextView_uname"/>
+
+	<Button
+		android:focusable="false"
+		android:background="@null"
+		android:id="@+id/video_judgeButton_reply"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="10dp"
+		android:text="回复"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"/>
+
+	<Button
+		android:focusable="false"
+		android:background="@null"
+		android:id="@+id/video_judgeButton_delete"
+		android:text="删除"
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:layout_alignParentRight="false"
+		android:layout_toLeftOf="@id/video_judgeButton_reply"
+		android:layout_marginRight="5dp"/>
+
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:id="@+id/video_judgeTextView_content"
+		android:layout_below="@id/video_judgeImageView_header"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:padding="2dp"
+		android:layout_marginTop="2dp"
+		android:layout_marginLeft="25dp"/>
+
+</RelativeLayout>
+

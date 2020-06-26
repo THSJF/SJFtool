@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/medal_list_itemRelativeLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<ImageView
+		android:id="@+id/medal_list_itemImageView_head"
+		android:layout_width="60dp"
+		android:layout_height="60dp"
+		android:layout_margin="3dp"
+		android:layout_alignParentLeft="true"/>
+
+	<TextView
+		android:id="@+id/medal_list_itemTextView_medalName"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:text="头衔名"
+		android:layout_toRightOf="@id/medal_list_itemImageView_head"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"/>
+
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="头衔等级"
+		android:layout_toRightOf="@id/medal_list_itemTextView_medalName"
+		android:id="@+id/medal_list_itemTextView_medal_level"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"/>
+
+	<TextView
+		android:id="@+id/medal_list_itemTextView_rank"
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="排名"
+		android:layout_toRightOf="@id/medal_list_itemTextView_medal_level"
+		android:layout_alignBottom="@id/medal_list_itemTextView_medal_level"/>
+
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:id="@+id/medal_list_itemTextView_level_limit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="等级亲密度"
+		android:gravity="center"
+		android:layout_toRightOf="@id/medal_list_itemTextView_rank"
+		android:layout_alignParentRight="true"/>
+
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="今日亲密度"
+		android:gravity="center"
+		android:id="@+id/medal_list_itemTextView_today_limit"
+		android:layout_alignParentRight="true"
+		android:layout_below="@id/medal_list_itemTextView_level_limit"
+		android:layout_alignLeft="@id/medal_list_itemTextView_level_limit"/>
+
+	<TextView
+		android:textAppearance="?android:attr/textAppearanceListItemSmall"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="用户名"
+		android:id="@+id/medal_list_itemTextView_masterName"
+		android:paddingLeft="5dp"
+		android:paddingRight="5dp"
+		android:layout_toRightOf="@id/medal_list_itemImageView_head"
+		android:layout_alignBottom="@id/medal_list_itemTextView_today_limit"/>
+
+</RelativeLayout>
+

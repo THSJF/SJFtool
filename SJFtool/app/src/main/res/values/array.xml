@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="color_list">
+		<item>Holo</item>
+        <item>Holo Wallpaper</item>
+		<item>Holo light</item>
+        <item>MD</item>
+		<item>MD dark</item>
+    </string-array>
+	
+	<string-array name="cache_mode">
+        <item>CacheOnly</item>
+		<item>CachePrefer</item>
+        <item>CacheRefresh</item>
+		<item>NoCache</item>
+    </string-array>
+</resources>
+

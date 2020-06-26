@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	xmlns:fab="http://schemas.android.com/apk/res-auto"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<LinearLayout
+		android:id="@+id/live_fragmentLinearLayout_main"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<FrameLayout
+			android:id="@+id/videoLayout"
+			android:layout_width="fill_parent"
+			android:layout_height="250dp"
+			android:background="@android:color/black">
+
+			<com.universalvideoview.UniversalVideoView
+				android:id="@+id/videoView"
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent"
+				android:layout_gravity="center"
+				app:uvv_autoRotation="true"
+				app:uvv_fitXY="false"/>
+
+			<com.universalvideoview.UniversalMediaController
+				android:id="@+id/media_controller"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				app:uvv_scalable="true"/>
+
+			<ImageView
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"
+				android:id="@+id/live_fragmentImageView"/>
+
+		</FrameLayout>
+
+		<RelativeLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:id="@+id/live_fragmentLinearLayout_b">
+
+			<TextView
+				android:textAppearance="?android:attr/textAppearanceListItemSmall"
+				android:id="@+id/live_fragmentTextView_info"
+				android:focusable="true"
+				android:longClickable="true"
+				android:textIsSelectable="true"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent"/>
+
+			<ListView
+				android:layout_below="@id/live_fragmentTextView_info"
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:id="@+id/livefragmentListView_danmaku"/>
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:visibility="gone"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/live_fragmentLinearLayout_input"
+		android:layout_gravity="bottom|center"
+		android:paddingRight="84dp">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/live_fragment2EditText_danmaku"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="5"/>
+
+			<ImageButton
+				android:id="@+id/live_fragment2Button_send"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="发送"
+				android:layout_weight="1"
+				android:background="@null"
+				android:src="@drawable/ic_plane"
+				android:layout_gravity="bottom|center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+
+			<Spinner
+				android:id="@+id/live_fragment2Spinner"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1.7"/>
+
+			<Button
+				android:id="@+id/live_fragment2Button_preset"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:text="预设"
+				android:layout_weight="1"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<com.github.clans.fab.FloatingActionMenu
+		android:id="@+id/lv_float_menu"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginRight="10dp"
+		android:layout_marginBottom="10dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginTop="10dp"
+		fab:menu_labels_style="@style/MenuLabelsStyle"
+		fab:menu_labels_showAnimation="@anim/jump_from_down"
+		fab:menu_labels_hideAnimation="@anim/jump_to_down"
+		fab:menu_animationDelayPerItem="0"
+		fab:menu_shadowColor="#444"
+		fab:menu_colorNormal="@color/app_primary"
+		fab:menu_colorPressed="@color/app_primary_dark"
+		fab:menu_colorRipple="#7FCA00"
+		android:layout_gravity="bottom|right">
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/live_fragment2Button_silver"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="发送辣条(瓜子)"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/live_fragment2Button_pack"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="发送礼物(抽奖)"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/livefragmentButtonSerialMilk"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="奶人序列"
+			style="@style/MenuButtonsSmall"/>
+
+		<com.github.clans.fab.FloatingActionButton
+			android:id="@+id/livefragmentButtonDownload"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_edit"
+			fab:fab_label="复制视频地址"
+			style="@style/MenuButtonsSmall"/>
+
+	</com.github.clans.fab.FloatingActionMenu>
+
+</FrameLayout>
+

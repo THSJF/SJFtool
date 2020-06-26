@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+		
+    <style name="AppThemeLight" parent="android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name="android:statusBarColor">@color/actionBarLight</item>
+		<item name="android:actionBarStyle">@style/ActionBarLight</item>
+    </style>
+	<style name="ActionBarLight" parent="android:Widget.ActionBar">
+        <item name="android:background">@color/actionBarLight</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleText</item>
+    </style>
+
+
+    <style name="AppThemeDark" parent="android:style/Theme.Material">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:actionBarStyle">@style/ActionBarDark</item>
+    </style>
+    <style name="ActionBarDark" parent="android:Widget.ActionBar">
+        <item name="android:background">@color/actionBarDark</item>
+        <item name="android:icon">@android:color/transparent</item>
+        <item name="android:titleTextStyle">@style/ActionBar.TitleText</item>
+    </style>
+
+    <style name="ActionBar.TitleText" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+	
+	
+	<style name="AppThemeHoloL" parent="android:style/Theme.Holo.Light">
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowShowWallpaper">true</item>
+		<item name="android:windowBackground">@color/windowBackgroundL</item>
+		<item name="android:colorForeground">#80ffffff</item>
+		<item name="android:actionBarStyle">@style/ActionbarStyle</item>
+	</style>
+	<style name="ActionbarStyle" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#00000000</item>
+	</style>
+	
+	<style name="AppThemeHoloWallpaper" parent="android:style/Theme.Holo.Wallpaper">
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<!--<item name="android:statusBarColor">@color/possible_result_points</item>-->
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowBackground">@color/windowBackground</item>
+		<item name="android:colorForeground">#80000000</item>
+	</style>
+	
+	<style name="AppThemeHolo" parent="android:style/Theme.Holo">
+		<!--<item name="android:windowDrawsSystemBarBackgrounds">true</item>
+		<item name="android:statusBarColor">@color/possible_result_points</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowBackground">@color/windowBackground</item>
+		<item name="android:colorForeground">#80000000</item>-->
+	</style>
+
+
+    <style name="MenuLabelsStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MenuButtonsStyle">
+        <item name="fab_size">mini</item>
+        <item name="fab_showAnimation">@anim/jump_from_down</item>
+        <item name="fab_hideAnimation">@anim/jump_to_down</item>
+        <item name="fab_shadowColor">#444</item>
+        <item name="fab_colorNormal">#FFB805</item>
+        <item name="fab_colorPressed">#F2AB00</item>
+        <item name="fab_colorRipple">#D99200</item>
+    </style>
+
+    <style name="MenuButtonsSmall">
+        <item name="fab_size">mini</item>
+        <item name="fab_colorNormal">#1565C0</item>
+        <item name="fab_colorPressed">#2272CD</item>
+        <item name="fab_colorRipple">#62B2FF</item>
+    </style>
+
+    <style name="MenuButtonsSmall.Green">
+        <item name="fab_colorNormal">#43A047</item>
+        <item name="fab_colorPressed">#2E7D32</item>
+        <item name="fab_colorRipple">#1B5E20</item>
+    </style>
+
+    <style name="DrawerItemTextAppearance">
+        <item name="android:fontFamily" >sans-serif-light</item>
+    </style>
+	
+	
+</resources>
+

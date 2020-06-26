@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="opendraw"
+		android:defaultValue="true"
+        android:title="启动时打开滑动菜单" />
+	
+	<ListPreference
+		android:dialogTitle="选择颜色"
+		android:entries="@array/color_list"
+		android:entryValues="@array/color_list"
+		android:defaultValue="Holo"
+		android:key="theme"
+		android:summary="重启生效"
+		android:title="主题" />
+
+	<PreferenceScreen  
+		android:title="奇怪的设置"  
+		android:summary="不知道作用的话不要修改">  
+
+		<ListPreference
+			android:dialogTitle="图片缓存模式"
+			android:entries="@array/cache_mode"
+			android:entryValues="@array/cache_mode"
+			android:defaultValue="CachePrefer"
+			android:key="cacheModePic"
+			android:title="图片缓存模式" />
+
+		<ListPreference
+			android:dialogTitle="json缓存模式"
+			android:entries="@array/cache_mode"
+			android:entryValues="@array/cache_mode"
+			android:defaultValue="NoCache"
+			android:key="cacheModeJson"
+			android:title="json缓存模式" />
+
+		<CheckBoxPreference
+			android:key="netLog"
+			android:defaultValue="false"
+			android:title="记录网络日志"
+			android:summary="保存在SD卡/sjfLogNetwork.log"/>
+	</PreferenceScreen>
+
+    <CheckBoxPreference
+        android:key="exit"
+        android:summaryOff="使用finish"
+        android:summaryOn="使用System.exit"
+        android:title="退出功能实现方式" />
+
+	<!--<EditTextPreference
+	android:key="port"
+	android:summary="飞机佬服务器端口"
+	android:title="设置端口" />
+    <EditTextPreference
+	android:key="mainAccount"
+	android:summary="主页未输入账号时将会对此账号的直播间进行操作"
+	android:title="设置主账号" />
+    <PreferenceCategory android:title="挂机">
+	<CheckBoxPreference
+	android:defaultValue="false"
+	android:key="notifi"
+	android:summaryOff="发送全部通知"
+	android:summaryOn="仅发送验证码通知"
+	android:title="仅在需要输入验证码时发送通知" />
+    </PreferenceCategory>
+	-->
+</PreferenceScreen>
